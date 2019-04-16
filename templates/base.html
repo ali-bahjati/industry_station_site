@@ -62,12 +62,9 @@
                         <nav class="collapse navbar-collapse navbar-responsive-collapse pull-right">
                             <ul class="nav navbar-nav">
                                 {% block navbar_items %}
-                                    <li><a href="{% url 'wss:home' %}">Home</a></li>
+                                    <li><a href="{% url 'wss:home' %}">خانه</a></li>
                                     <!-- Home li end -->
-                                    <li class="header-ticket">
-                                        <a href="{% url 'wss:home' %}" class="ticket-btn btn-primary">Visit the last
-                                            seminar page</a>
-                                    </li>
+
                                 {% endblock %}
                                 <!-- Register li end -->
                             </ul>
@@ -94,8 +91,7 @@
                     <div class="footer-menu">
                         <ul class="nav unstyled">
                             {% block footer_menu_items %}
-                                <li><a href="{% url 'wss:home' %}">Home</a></li>
-                                <li><a href="{% url 'wss:home' %}">Visit the Latest seminar page</a></li>
+                                <li><a href="{% url 'wss:home' %}">خانه</a></li>
                             {% endblock %}
                         </ul>
                         {% if past_years %}
@@ -118,8 +114,8 @@
                     </div>
                     <!-- Footer social end -->
                     <div class="copyright-info">
-                  <span>This website is created by <a href="{% url 'people:creators-list' %}">Moazzam Team</a>.<br>
-                  Copyright © 2018-2019 interna. All Rights Reserved For <a href="http://ssc.ce.sharif.edu">SSC</a>.
+                  <span><br>
+                  Copyright © 2018-2019 <a href="http://ssc.ce.sharif.edu">SSC</a>.
                       </span>
                     </div>
                     <!-- Copyright info end -->

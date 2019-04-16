@@ -16,12 +16,12 @@
                     </button>
                     <nav class="collapse navbar-collapse navbar-responsive-collapse pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a style="text-shadow: 0px 0px 4px black;" href="{% url 'wss:home' wss.year %}">{{ wss }}</a></li>
+                            <li><a href="{% url 'wss:home' wss.year %}">{{ wss }}</a></li>
 
-                            <li><a style="text-shadow: 0px 0px 5px black;" href="#ts-intro">درباره</a></li>
-                            <li><a style="text-shadow: 0px 0px 5px black;" href="#ts-speakers">ارائه‌دهندگان</a></li>
-                            <li><a style="text-shadow: 0px 0px 5px black;" href="{% url 'wss:schedule' wss.year %}">زمان‌بندی</a></li>
-                            <li><a style="text-shadow: 0px 0px 5px black;" data-scroll href="{% url 'wss:staff-list' wss.year %}">دست‌‌اندرکاران</a></li>
+                            <li><a href="#ts-intro">درباره</a></li>
+                            <li><a href="#ts-speakers">ارائه‌دهندگان</a></li>
+                            <li><a href="{% url 'wss:schedule' wss.year %}">زمان‌بندی</a></li>
+                            <li><a data-scroll href="{% url 'wss:staff-list' wss.year %}">دست‌‌اندرکاران</a></li>
 
                             {% if wss.is_active %}
                                 {% if wss.registration_link %}
@@ -54,7 +54,31 @@
         <div class="banner-item bg-overlay" style="background-image:url('{{ wss.main_image_url }}')">
             <div class="container">
                 <div class="banner-content text-center">
+                    <h1 class="banner-title" style="text-shadow: 0px 0px 7px #26a5bb; color: #ffffff; font-family: Yekan ">ایستگاه صنعت</h1>
+                    </br>
+                    </br>
+
+
+                    <h2 class="banner-subtitle2 " style="color: #000000">
+                        گام اول ارتباط با صنعت
+                    </h2>
+
+                    <input type="hidden" value="{{ wss.start_date|date:'m/d/Y' }}" id="start-date">
+                    <h3 class="banner-subtitle" style="color: #000000;" dir="rtl">۸ و ۹ اردیبهشت ماه، ۱۳۹۸</h3>
+                    <h3 class="banner-desc" style="color: #000000;">ایران، تهران، دانشگاه صنعتی شریف</h3>
                     {% if wss.is_active %}
+                        {% if wss.registration_link %}
+                            <p class="banner-btn" >
+                                <a href="{{ wss.registration_link }}" class="btn btn-danger" dir="rtl" style="font-size: 20px; border: 2px solid red; border-radius: 25px;">
+                                    همین حالا ثبت‌نام کنید!
+                                </a>
+                            </p>
+                        {% endif %}
+                    {% endif %}
+
+                <br><br>
+
+                {% if wss.is_active %}
                         <div class="">
                             <div class="countdown bg-style">
                                 <div class="counter-day ">
@@ -77,31 +101,6 @@
                         </div>
                     {% endif %}
                     <!-- Countdown end -->
-                    </br>
-                    <h1 class="banner-title" style="text-shadow: 0px 0px 13px #FF8394; color: #fe2f43; font-family: Yekan ">اینترنا</h1>
-                    </br>
-                    </br>
-                    <h2 class="banner-subtitle2 " style="text-shadow: 0px 0px 5px gray; color: #fe2f43">
-                        ارائه هایی با نگاه به تجربه ها‌ و چالش های
-                    </h2>
-                    </br>
-                    <h2 class="banner-subtitle2 " style="text-shadow: 0px 0px 5px gray; color: #fe2f43">
-                        کارآموزی در داخل و خارج از
-                        کشور
-                    </h2>
-
-                    <input type="hidden" value="{{ wss.start_date|date:'m/d/Y' }}" id="start-date">
-                    <h3 class="banner-subtitle" style="text-shadow: 0px 0px 4px black;" dir="rtl">۳ آبان‌ماه، ۱۳۹۷</h3>
-                    <h3 class="banner-desc" style="text-shadow: 0px 0px 3px black;">ایران، تهران، دانشگاه صنعتی شریف</h3>
-                    {% if wss.is_active %}
-                        {% if wss.registration_link %}
-                            <p class="banner-btn" >
-                                <a href="{{ wss.registration_link }}" class="btn btn-danger" dir="rtl" style="font-size: 20px; border: 2px solid red; border-radius: 25px;">
-                                    همین حالا ثبت‌نام کنید!
-                                </a>
-                            </p>
-                        {% endif %}
-                    {% endif %}
                     <!-- Banner content wrap end -->
                 </div>
                 <!-- Banner content end -->
@@ -160,12 +159,12 @@
                         <a data-scroll href="#ts-speakers">
                             <div class="ts-facts">
                         <span class="ts-facts-img">
-                        <img src="{% static 'images/icons/fact-speaker.png' %}" alt=""/>
+                        <img src="{% static 'images/icons/fact-sponsor.png' %}" alt=""/>
                         </span>
                                 <div class="ts-facts-content">
                                     <h2 class="ts-facts-num"><span class="counterUp">{{ wss.seminars.count }}</span>
                                     </h2>
-                                    <h3 class="ts-facts-title">ارائه‌ها</h3>
+                                    <h3 class="ts-facts-title">شرکت‌ها</h3>
                                 </div>
                             </div>
                         </a>
@@ -177,11 +176,11 @@
                         <a data-scroll href="{% url 'wss:staff-list' wss.year %}">
                             <div class="ts-facts">
                         <span class="ts-facts-img">
-                        <img src="{% static 'images/icons/fact-country.png' %}" alt="Staff"/>
+                        <img src="{% static 'images/icons/fact-speaker.png' %}" alt="Staff"/>
                         </span>
                                 <div class="ts-facts-content">
-                                    <h2 class="ts-facts-num"><span class="counterUp">{{ wss.staff_count }}</span></h2>
-                                    <h3 class="ts-facts-title">دست‌اندرکاران</h3>
+                                    <h2 class="ts-facts-num"><span class="counterUp">{{ wss.keynotes.count }}</span></h2>
+                                    <h3 class="ts-facts-title">ارائه‌ها</h3>
                                 </div>
                             </div>
                         </a>
@@ -196,7 +195,7 @@
         <!--/ Container end -->
     </section>
     <!--/ Newsletter end -->
-    <section id="ts-speakers" class="ts-speakers gradient-bg" style="background-image: url('../../../static/images/bg-speakers.png');">
+    <section id="ts-speakers" class="ts-speakers">
         <div class="container" >
             <!--/ Title row end -->
             <div class="row">
@@ -215,18 +214,18 @@
             </div>
             <br>
             <div class="row text-center">
-                <h3 class="section-sub-title title-white" style="text-shadow: 0px 0px 5px gray; color: #fe2f43">ارائه‌دهندگان</h3>
+                <h3 class="section-sub-title title-white" style="text-shadow: 0px 0px 5px gray; color: #fe2f43">شرکت‌ها</h3>
             </div>
             {% for seminar in selected_seminars %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    {% render_human seminar.speaker subtitle=seminar.speaker.short_bio url=seminar.get_absolute_url %}
+                    {% render_human seminar.speaker subtitle='' url=seminar.get_absolute_url %}
                 </div>
             {% endfor %}
         </div>
 
         <div class="row">
             <div class="general-btn text-center">
-                <a class="btn btn-danger" href="{% url 'wss:seminars-list' wss.year %}">دیدن تمام ارائه‌دهندگان</a>
+                <a class="btn btn-danger" href="{% url 'wss:seminars-list' wss.year %}">دیدن تمام شرکت‌ها</a>
             </div>
         </div>
         <!-- Content row 2 end -->

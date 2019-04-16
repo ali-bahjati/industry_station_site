@@ -21,7 +21,7 @@ class WSS(models.Model):
         verbose_name_plural = 'Winter Seminar Series'
 
     def __str__(self):
-        return 'اینترنا {}'.format(self.year)
+        return 'ایستگاه صنعت {}'.format(self.year)
 
     @property
     def main_image_url(self):
