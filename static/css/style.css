@@ -62,7 +62,7 @@
 }
 
 body {
-    background: #000000;
+    background: #ffffff;
     color: #333;
     font-family: "Iranian Sans";
 }
@@ -328,7 +328,7 @@ img.pull-right {
     line-height: 28px;
     font-weight: 500;
     margin:0;
-    color: white;
+    color: #000000;
 }
 
 .section-sub-title,
@@ -1418,8 +1418,8 @@ ul.navbar-nav > li > a i {
 .ts-intro{
     padding-bottom: 30px;
     margin-top: 30px;
-    background-color: black;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .ts-intro .btn-primary{
@@ -1568,7 +1568,7 @@ ul.navbar-nav > li > a i {
 }
 
 .facts .intro-title {
-    color: #fff;
+    color: #000000;
     margin-top: 0;
 }
 .facts .btn-dark {
@@ -1910,7 +1910,7 @@ ul.navbar-nav > li > a i {
 
 .ts-statics{
     /*background: url(../images/pattern1.png);*/
-    background-color: #44c3d9; /*FIXME*/
+    background-color: #fed603; /*FIXME*/
     padding: 40px 0;
 }
 
@@ -1921,7 +1921,7 @@ ul.navbar-nav > li > a i {
 }
 
 .statics h2 {
-    color: #446CB3;
+    color: #171717;
     margin-top: 0;
     font-size: 14px;
     line-height: normal;
@@ -1929,7 +1929,7 @@ ul.navbar-nav > li > a i {
 }
 
 .statics h3 {
-    color: #fff;
+    color: #000000;
     margin: 5px 0 0;
     font-size: 30px;
 }
