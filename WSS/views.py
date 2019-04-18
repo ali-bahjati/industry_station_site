@@ -6,6 +6,8 @@ from django.views.generic.detail import DetailView
 from WSS.mixins import FooterMixin, WSSWithYearMixin
 from WSS.models import WSS
 
+from people.models import Speaker
+
 
 class HomeView(FooterMixin, DetailView):
     template_name = 'WSS/home.html'
@@ -14,6 +16,7 @@ class HomeView(FooterMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['selected_seminars'] = self.object.non_keynote_seminars.order_by('?')[:8]
+        context['speakers'] = Speaker.objects.all()
         return context
 
     def get_object(self, queryset=None):

@@ -20,8 +20,8 @@
 
                             <li><a href="#ts-intro">درباره</a></li>
                             <li><a href="#ts-speakers">شرکت‌ها</a></li>
-                            <li><a href="{% url 'wss:schedule' wss.year %}">زمان‌بندی</a></li>
-                            <li><a data-scroll href="{% url 'wss:staff-list' wss.year %}">دست‌‌اندرکاران</a></li>
+{#                            <li><a href="{% url 'wss:schedule' wss.year %}">زمان‌بندی</a></li>#}
+{#                            <li><a data-scroll href="{% url 'wss:staff-list' wss.year %}">دست‌‌اندرکاران</a></li>#}
 
                             {% if wss.is_active %}
                                 {% if wss.registration_link %}
@@ -162,7 +162,7 @@
                         <img src="{% static 'images/icons/fact-company.png' %}" alt=""/>
                         </span>
                                 <div class="ts-facts-content">
-                                    <h2 class="ts-facts-num"><span class="counterUp">{{ wss.non_keynote_seminars.count }}</span>
+                                    <h2 class="ts-facts-num"><span class="counterUp">{{ speakers.count }}</span>
                                     </h2>
                                     <h3 class="ts-facts-title">شرکت‌ها</h3>
                                 </div>
@@ -179,7 +179,7 @@
                         <img src="{% static 'images/icons/fact-speaker-5.png' %}" alt="Staff"/>
                         </span>
                                 <div class="ts-facts-content">
-                                    <h2 class="ts-facts-num"><span class="counterUp">{{ wss.keynote_seminars.count }}</span></h2>
+                                    <h2 class="ts-facts-num"><span class="counterUp">{{ wss.seminars.count }}</span></h2>
                                     <h3 class="ts-facts-title">ارائه‌ها</h3>
                                 </div>
                             </div>
@@ -197,37 +197,23 @@
     <!--/ Newsletter end -->
     <section id="ts-speakers" class="ts-speakers">
         <div class="container" >
-            <!--/ Title row end -->
-            <div class="row">
 
-                <div class="row text-center">
-                <h3 class="section-sub-title title-white" style="text-shadow: 0px 0px 5px gray; color: black;">
-                    ارائه‌ها</h3>
-                </div>
-
-                {% for seminar in wss.keynote_seminars %}
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        {% render_human seminar.speaker subtitle=seminar.speaker.short_bio url=seminar.get_absolute_url %}
-                    </div>
-                {% endfor %}
-
-            </div>
-            <br>
             <div class="row text-center">
                 <h3 class="section-sub-title title-white" style="text-shadow: 0px 0px 5px gray; color: black;">شرکت‌ها</h3>
             </div>
-            {% for seminar in selected_seminars %}
+            {% for speaker in speakers %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    {% render_human seminar.speaker subtitle='' url=seminar.get_absolute_url %}
+{#                    {% render_human speaker subtitle='' url=seminar.get_absolute_url %}#}
+                {% render_human speaker subtitle='' url='' %}
                 </div>
             {% endfor %}
         </div>
-
-        <div class="row">
-            <div class="general-btn text-center">
-                <a class="btn btn-dark" style="color: white;" href="{% url 'wss:seminars-list' wss.year %}">دیدن تمام شرکت‌ها</a>
-            </div>
-        </div>
+{##}
+{#        <div class="row">#}
+{#            <div class="general-btn text-center">#}
+{#                <a class="btn btn-dark" style="color: white;" href="{% url 'wss:seminars-list' wss.year %}">دیدن تمام شرکت‌ها</a>#}
+{#            </div>#}
+{#        </div>#}
         <!-- Content row 2 end -->
         <!--/ Container end -->
     </section>
