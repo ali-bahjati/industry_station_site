@@ -134,16 +134,20 @@
                     {% endif %}
                 </div>
 
-                {% if wss.main_clip_url %}
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="intro-video">
-                        <video controls class="embed-responsive-item" src="{{ wss.main_clip_url }}" preload="none">
-                        </video>
-                    </div>
-                {% endif %}
+{#                {% if wss.main_clip_url %}#}
+{#                    <div class="col-xs-12 col-sm-12 col-md-6">#}
+{#                    <div class="intro-video">#}
+{#                        <video controls class="embed-responsive-item" src="{{ wss.main_clip_url }}" preload="none">#}
+{#                        </video>#}
+{#                    </div>#}
+{#                {% endif %}#}
+
+                <div class="col-xs-12 col-sm-12 col-md-6" style="text-align: center;">
+                    <img class="center-img" src="{% static 'images/logo-homepage.png' %}" alt="" width="100%" style="padding: 30px 30px;"/>
+                </div>
 
                 <!-- Col end -->
-                </div>
+
                 <!-- Content row 1 end -->
             </div>
         </div>
@@ -221,15 +225,28 @@
 
     <section class="venu-map no-padding " >
         <div class="container-fluid">
-            <div class="row ts-ending">
-                <div class="col-md-6 ">
+            <div class="row ts-ending" style="padding-bottom: 10px;">
+                 <div class="col-md-6 ">
                     <div class="bottom-contact">
                         <h4>Organizer info</h4>
-                        <p>The event is held by the <a href="http://ssc.ce.sharif.edu">Student Scientific
-                            Chapter (SSC)</a> of <a href="http://ce.sharif.edu">Computer Engineering Department</a>
-                            of <a href="http://sharif.edu">Sharif University of Technology</a>
+                                <p>The event is held by the <a style="color: #4466b0" href="http://ssc.ce.sharif.edu">Student Scientific
+                                    Chapter (SSC)</a> of <a style="color: #4466b0" href="http://ce.sharif.edu">Computer Engineering Department</a>
+                                    of <a style="color: #4466b0" href="http://sharif.edu">Sharif University of Technology</a>
                         </p>
-                        <br>
+                    </div>
+                 </div>
+                <div class="col-md-6">
+                    <a href="http://ssc.ce.sharif.edu">
+                <img class="center-img" style="margin-right: auto" width="50%" src="/static/images/ssc-logo.png">
+                    </a>
+                </div>
+            </div>
+
+            </div>
+            <div class="row ts-ending" style="padding-top: 10px;">
+                <div class="col-md-6 ">
+                    <div class="bottom-contact">
+
                         <h4>Venue Details</h4>
                         <div class="contact-info">
                             <div class="contact-info-box">
@@ -250,7 +267,7 @@
                                 <i class="fa fa-phone">&nbsp;</i>
                                 <div class="contact-info-box-content">
                                     <h5 >Phone: </h5>
-                                    <p>+98(021) 66 16 57 81</p>
+                                    <p>+98 (21) 66 16 57 81</p>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +278,9 @@
                 <!-- Col end -->
                 <div class="col-md-6">
                     <a href="https://www.google.com/maps/place/Sharif+University+of+Technology/@35.7036366,51.3494043,17z/data=!3m1!4b1!4m5!3m4!1s0x3f8e00a8bc1a7e63:0x61a5a909b878501!8m2!3d35.7036366!4d51.351593">
-                <img width="100%" src="/static/images/map.jpg">
+                <img style="padding-top: 20px" width="100%" src="/static/images/map.jpg">
+                    </a>
+                </div>
              </a>
                     <!-- Google Map -->
                 </div>
