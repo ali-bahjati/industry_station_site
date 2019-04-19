@@ -208,7 +208,7 @@
             {% for speaker in speakers %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
 {#                    {% render_human speaker subtitle='' url=seminar.get_absolute_url %}#}
-                {% render_human speaker subtitle='' url='' %}
+                {% render_human speaker subtitle='' url=speaker.seminars.first.get_absolute_url %}
                 </div>
             {% endfor %}
         </div>

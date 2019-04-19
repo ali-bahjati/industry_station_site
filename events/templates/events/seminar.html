@@ -10,7 +10,9 @@
             <div class="row">
                 <div class="clearfix">
                     <div class="col-xs-12 col-md-4">
-                        {% render_human seminar.speaker subtitle=seminar.speaker.short_bio url=None %}
+{#                        {% render_human seminar.speaker subtitle=seminar.speaker.short_bio url=None %}#}
+                        {% render_human seminar.speaker subtitle='' url=None %}
+
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="ts-speaker-session right">
@@ -21,7 +23,7 @@
                             {% endif %}
                             {% if seminar.start_time %}
                             <h4>زمان</h4>
-                            <br>{% time_string seminar.start_time %} - {% time_string seminar.end_time %}
+                            {% time_string seminar.start_time %} - {% time_string seminar.end_time %}
                             {% endif %}
 
                             <h4>خلاصه</h4>

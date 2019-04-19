@@ -1894,7 +1894,7 @@ ul.navbar-nav > li > a i {
 }
 .ts-speaker-session.right{
     padding-left: 20px;
-    text-align: justify;
+    text-align: right;
 }
 
 .ts-speaker-session.left{
@@ -1904,7 +1904,7 @@ ul.navbar-nav > li > a i {
 
 .ts-speaker-session .session-title {
     font-size: 24px;
-    text-align: justify;
+    text-align: right;
     margin-top: 0;
 }
 
@@ -3205,5 +3205,9 @@ label {
         margin-left: auto;
         margin-right: 0px;
         width: 50%;
+    }
+
+    .intro-title{
+        padding-top: 50px;
     }
 }
