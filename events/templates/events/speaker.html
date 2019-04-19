@@ -3,7 +3,7 @@
 {% load date_tags %}
 {% load human_tags %}
 
-{% block title %}{{ seminar.speaker.name }}{% endblock %}
+{% block title %}{{ speaker.name }}{% endblock %}
 {% block content %}
     <section id="main-container" class="main-container">
         <div class="container">
@@ -11,28 +11,16 @@
                 <div class="clearfix">
                     <div class="col-xs-12 col-md-4">
 {#                        {% render_human seminar.speaker subtitle=seminar.speaker.short_bio url=None %}#}
-                        {% render_human seminar.speaker subtitle='' url=None %}
+                        {% render_human speaker subtitle='' url=None %}
 
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="ts-speaker-session right">
-                            <h3 class="session-title">{{ seminar.title }}</h3>
-                            {% if seminar.venue %}
-                            <h4>مکان</h4>
-                            {{ seminar.venue.address }}
-                            {% endif %}
-                            {% if seminar.start_time %}
-                            <h4>زمان</h4>
-                            {% time_string seminar.start_time %} - {% time_string seminar.end_time %}
-                            {% endif %}
-
-                            <h4>خلاصه</h4>
-                            <div dir="rtl"> {{ seminar.abstract|linebreaksbr }} </div>
-
                             <h4>مکان غرفه</h4>
                             {{ speaker.place }}
-                            <h4>درباره ارائه‌کننده</h4>
-                            <div dir="rtl"> {{ seminar.speaker.bio|linebreaksbr }} </div>
+
+                            <h4>درباره شرکت</h4>
+                            <div dir="rtl"> {{speaker.bio|linebreaksbr }} </div>
 
                         </div><!-- Session end -->
                     </div><!-- Col end -->

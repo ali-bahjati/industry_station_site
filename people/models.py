@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from polymorphic.models import PolymorphicModel
 
 
@@ -25,6 +26,10 @@ class Speaker(Human):
     @property
     def short_bio(self):
         return '{}, {}'.format(self.degree, self.place)
+
+    @property
+    def get_absolute_url(self):
+        return reverse('events:speaker', args=[self.pk])
 
 
 class HoldingTeam(models.Model):

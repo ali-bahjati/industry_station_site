@@ -2,6 +2,8 @@ from django.views.generic import DetailView
 
 from WSS.mixins import FooterMixin
 from events.models import Seminar, Workshop
+from people.models import Speaker
+from WSS.models import WSS
 
 
 class SeminarView(FooterMixin, DetailView):
@@ -12,6 +14,19 @@ class SeminarView(FooterMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['wss'] = self.object.wss
+        return context
+
+
+class SpeakerView(FooterMixin, DetailView):
+    template_name = 'events/speaker.html'
+    context_object_name = 'speaker'
+    model = Speaker
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+
+        # FIXME: Doesn't work for multiple years, add wss to speaker
+        context['wss'] = WSS.objects.order_by('-id').first
         return context
 
 

@@ -117,7 +117,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <h2 class="intro-title">درباره این رویداد</h2>
                     </br>
-                    <p class="intro-desc" dir="rtl">{{ wss.description }}</p>
+                    <p class="intro-desc" dir="rtl">{{ wss.description|linebreaksbr }}</p>
                     </br>
                     {% if wss.is_active %}
                         <p>
@@ -208,7 +208,11 @@
             {% for speaker in speakers %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
 {#                    {% render_human speaker subtitle='' url=seminar.get_absolute_url %}#}
-                {% render_human speaker subtitle='' url=speaker.seminars.first.get_absolute_url %}
+                    {% if speaker.seminars.first %}
+                        {% render_human speaker subtitle='' url=speaker.seminars.first.get_absolute_url %}
+                    {% else %}
+                        {% render_human speaker subtitle='' url=speaker.get_absolute_url %}
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
