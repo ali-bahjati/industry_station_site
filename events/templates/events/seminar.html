@@ -16,19 +16,22 @@
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="ts-speaker-session right">
-                            <h3 class="session-title">{{ seminar.title }}</h3>
 
                             <h4>مکان غرفه</h4>
                             {{ seminar.speaker.place }}
                             <h4>درباره شرکت</h4>
                             <div dir="rtl"> {{ seminar.speaker.bio|linebreaksbr }} </div>
 
+                             <h4>موضوع ارائه</h4>
+                            {{ seminar.title }}
+
+
                             {% if seminar.venue %}
                             <h4>محل ارائه</h4>
                             {{ seminar.venue.address }}
                             {% endif %}
                             {% if seminar.start_time %}
-                            <h4>زمان</h4>
+                            <h4>زمان ارائه</h4>
                                 <div dir="rtl">
                             {% if seminar.day_persian %}
                                 {{ seminar.day_persian }}
