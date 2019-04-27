@@ -11,6 +11,7 @@ class BaseEvent(PolymorphicModel):  # Is implicitly Abstract
     start_time = models.DateTimeField(null=True, blank=True)
     duration = models.DurationField(default=timedelta())
     venue = models.ForeignKey(to='Venue', related_name='events', null=True, blank=True)
+    day_persian = models.CharField(max_length=20, null=True, blank=True)
 
     class Meta:
         ordering = ('start_time',)
